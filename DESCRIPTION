@@ -1,0 +1,14 @@
+Package: EnvEpi
+Title: Common Functions for Environmental Epidemiology
+Version: 0.0.0.9000
+Authors@R: person("Hilary", "Browning", email = "h.f.browning@gmail.com", role = c("aut", "cre"))
+Description: This package collects together simple functions to 
+    facilitate common data formatting tasks in the Environmental 
+    Epidemiology section at the Washington State Department of Health. 
+    Most of these tasks involve formatting data to respond to 
+    requests from CDC or the Washington Tracking Network. 
+Depends:
+    R (>= 3.2.3)
+License: GPL-3
+LazyData: true
+RoxygenNote: 5.0.1.9000

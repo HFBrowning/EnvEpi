@@ -1,0 +1,26 @@
+#' Recode County Name to 1- and 2-digit codes
+#'
+#' This function accepts county names in any case format and 
+#' converts it to county code. 
+#'
+#' @param x a character vector of WA state county names
+#' @export
+#' @examples
+#' x <- c('Adams', 'YAKIMA')
+#' toDigit(x)
+
+toDigit = function(x){
+  from <- c('ADAMS', 'ASOTIN', 'BENTON', 'CHELAN', 'CLALLAM',
+            'CLARK', 'COLUMBIA', 'COWLITZ', 'DOUGLAS', 'FERRY',
+            'FRANKLIN', 'GARFIELD', 'GRANT', 'GRAYS HARBOR',
+            'ISLAND', 'JEFFERSON', 'KING', 'KITSAP', 'KITTITAS',
+            'KLICKITAT', 'LEWIS', 'LINCOLN', 'MASON', 'OKANOGAN',
+            'PACIFIC', 'PEND OREILLE', 'PIERCE', 'SAN JUAN', 
+            'SKAGIT', 'SKAMANIA', 'SNOHOMISH', 'SPOKANE',
+            'STEVENS', 'THURSTON', 'WAHKIAKUM', 'WALLA WALLA',
+            'WHATCOM', 'WHITMAN', 'YAKIMA')
+  to <- seq(1, 77, by = 2)  
+  x <- toupper(x)
+  as.numeric(mapvalues(x, from = from, to = to,
+                       warn_missing = FALSE))
+}
