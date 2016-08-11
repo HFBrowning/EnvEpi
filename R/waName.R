@@ -10,6 +10,9 @@
 #' waName(x)
 
 waName = function(x){
+  if(!is.numeric(x))
+    stop("PWS ID must be numeric")
+
   ifelse(nchar(x) == 5, 
          paste("WA00", x, sep=""),
          

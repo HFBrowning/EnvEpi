@@ -10,6 +10,9 @@
 #' toDigit(x)
 
 toDigit = function(x){
+  if(!is.character(x))
+    stop('County name must be a string')
+  
   from <- c('ADAMS', 'ASOTIN', 'BENTON', 'CHELAN', 'CLALLAM',
             'CLARK', 'COLUMBIA', 'COWLITZ', 'DOUGLAS', 'FERRY',
             'FRANKLIN', 'GARFIELD', 'GRANT', 'GRAYS HARBOR',
@@ -19,8 +22,11 @@ toDigit = function(x){
             'SKAGIT', 'SKAMANIA', 'SNOHOMISH', 'SPOKANE',
             'STEVENS', 'THURSTON', 'WAHKIAKUM', 'WALLA WALLA',
             'WHATCOM', 'WHITMAN', 'YAKIMA')
-  to <- seq(1, 77, by = 2)  
   x <- toupper(x)
-  as.numeric(mapvalues(x, from = from, to = to,
+  if(x %nin% from)
+    stop('County entry not in Washington State')
+  
+  to <- seq(1, 77, by = 2)  
+  as.numeric(plyr::mapvalues(x, from = from, to = to,
                        warn_missing = FALSE))
 }

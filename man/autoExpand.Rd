@@ -12,8 +12,11 @@ autoExpand(df)
 \description{
 A wrapper function for \code{expand.grid()} that
 automatically generates a combination of all
-factors based upon the unique entries in a
+factors based upon the unique column entries in a
 supplied data frame.
+}
+\details{
+Test!
 }
 \examples{
 data(HairEyeColor)
