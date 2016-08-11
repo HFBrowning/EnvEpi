@@ -12,15 +12,13 @@
 #' x <- as.data.frame(HairEyeColor)
 #' autoExpand(x)
 autoExpand <- function(df){
-  #Should include a warning in here if people are 
-  #looking at columns that are not factors (but rather
-  #are integers, or something)
   x <- lapply(df, unique)
+  options(warn=1)
+  if(any(!(sapply(x, is.factor)))){
+    warning("Non-factor columns. Expansion may be large.")}
   df2 <- expand.grid(x)
   colnames(df2) <- colnames(df)
-
   return(df2)
-
 }
 
 

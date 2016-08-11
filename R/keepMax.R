@@ -25,11 +25,9 @@
 
 keepMax <- function(df, x, value, max = TRUE){
   arg2 <- abs(df[value])
-
   if (max){
-    arg2 <- arg2*(-1)
+    arg2 <- arg2*(-1) 
   }
-
   args <- as.list(c(df[x], arg2))
   df2 <- df[do.call(order, args), ]
   rmDupes(df2, x)

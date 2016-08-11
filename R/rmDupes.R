@@ -12,7 +12,7 @@
 #' x <- c("Petal.Length", "Petal.Width")
 #' rmDupes(iris, x)
 #' @details
-#' This function is not robust to slight differences in names
+#' This function will not match slight differences in names
 #' and should not be used for addresses unless they have
 #' already been corrected.
 

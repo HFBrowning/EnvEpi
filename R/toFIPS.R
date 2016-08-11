@@ -13,17 +13,18 @@
 #' toFIPS(x, ct = FALSE)
 
 toFIPS = function(x, ct = TRUE){
-  if(!is.numeric(x))
+  #Note: need to add error for unused arguments. Right now
+  #something like toFIPS(3,5) works when it shouldn't. 
+  
+  if(!all(is.numeric(x)))
     stop("County code must be numeric")
-  
-  if(x %nin% seq(1, 77, by=2))
+  if(!all(x %in% seq(1, 77, by=2)))
     stop("County code must be an odd one or two digit integer code between 1 and 77 (inclusive)")
-  
   y <- ifelse(nchar(x) == 1,
               paste0("5300", x),
               paste0("530", x))
-  
-  if (ct){y <- paste0(y, "000000")}
+  if (ct){
+    y <- paste0(y, "000000")}
   return(y)
 }
 
