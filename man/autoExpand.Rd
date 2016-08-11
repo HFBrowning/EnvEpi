@@ -15,9 +15,6 @@ automatically generates a combination of all
 factors based upon the unique column entries in a
 supplied data frame.
 }
-\details{
-Test!
-}
 \examples{
 data(HairEyeColor)
 x <- as.data.frame(HairEyeColor)

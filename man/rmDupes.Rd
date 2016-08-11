@@ -17,7 +17,7 @@ finds and removes duplicate row entries from a data
 frame.
 }
 \details{
-This function is not robust to slight differences in names
+This function will not match slight differences in names
 and should not be used for addresses unless they have
 already been corrected.
 }

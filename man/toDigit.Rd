@@ -10,10 +10,11 @@ toDigit(x)
 \item{x}{a character vector of WA state county names}
 }
 \description{
-This function accepts county names in any case format and 
-converts it to county code.
+This function accepts a vector of county names in any case
+format and converts them to county code.
 }
 \examples{
+
 x <- c('Adams', 'YAKIMA')
 toDigit(x)
 }
