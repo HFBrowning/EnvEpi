@@ -2,6 +2,7 @@
 
 export("%nin%")
 export(autoExpand)
+export(decode)
 export(keepMax)
 export(multMerge)
 export(rmDupes)
