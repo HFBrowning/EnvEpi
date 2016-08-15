@@ -4,12 +4,11 @@
 \name{ct}
 \alias{ct}
 \title{Census Tract IDs and Area}
-\format{\code{ct} contains one column of census tract 
-IDs (\code{GEOID10}) and one column of the area of 
-each census tract in acres (\code{AREA_ACRES}). 
-\code{AREA_ACRES} was calculated using GIS software -
-it is not in the same units as 'shape area' from the 
-US Census Bureau shapefiles.}
+\format{A data frame with 1,450 rows and 2 columns:
+\itemize{
+   \item GEOID10: Census tract IDs from the US Census Bureau
+   \item Area: Area of census tract in acres
+   }}
 \source{
 TIGER/Line Shapefiles: \url{http://www.census.gov/geo/maps-data/data/tiger-line.html}
 }
@@ -17,10 +16,15 @@ TIGER/Line Shapefiles: \url{http://www.census.gov/geo/maps-data/data/tiger-line.
 data(ct)
 }
 \description{
-A simple table from the U.S. Census Bureau 
-that includes the ID for each census 
-tract in Washington State and the area in acres
+A simple table from the U.S. Census Bureau
+that includes the ID for each census
+tract in Washington State and the area (in acres)
 of that census tract.
+}
+\details{
+Note: Area was calculated using GIS software -
+it is not in the same units as 'shape area' from the
+US Census Bureau shapefiles.
 }
 \keyword{datasets}
 
